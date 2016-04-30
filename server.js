@@ -3,7 +3,7 @@ var app = express();
 
 app.get('/:id', function(req, res) {
   res.type('application/json');
-  res.send('i am a beautiful butterfly');
+  res.json({'i am a beautiful butterfly':true});
 });
 
 app.listen(process.env.PORT || 4730);

@@ -4,7 +4,7 @@ var app = express();
 app.get('/', function(req, res) {
   var output = {
       "ipaddress":req.headers["x-forwarded-for"],
-      "language":req.headers["accept-language"],
+      "language":req.headers["accept-language"].slice(0,req.headers["accept-language"].indexOf(",")),
       "software":req.headers["user-agent"].slice(req.headers["user-agent"].indexOf("(")+1,req.headers["user-agent"].indexOf(")"))
   }
   res.json(output);

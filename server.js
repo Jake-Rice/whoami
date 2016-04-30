@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 
-app.get('/', function(req, res) {
-  res.type('text/plain');
+app.get('/:id', function(req, res) {
+  res.type('application/json');
   res.send('i am a beautiful butterfly');
 });
 
